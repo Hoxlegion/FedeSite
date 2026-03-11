@@ -54,16 +54,13 @@ npm test
 # Run tests in watch mode
 npm run test:watch
 
-# Run tests with coverage report
-npm run test:coverage
-
 # Run tests in CI mode (no watch)
 npm run test:ci
 ```
 
 ### Test Coverage
 
-Test coverage reports are generated in the `coverage/` directory. The project maintains high test coverage across all components:
+Test coverage reports can be generated locally by running tests. The project maintains high test coverage across all components:
 
 - ✅ **App Component** - Root component with routing
 - ✅ **Navbar Component** - Navigation with mobile menu
@@ -132,7 +129,7 @@ The project uses **GitHub Actions** for continuous integration and deployment:
    - Runs on all pull requests
    - Jobs:
      - **Code Quality & Security** - ESLint, Prettier, npm audit
-     - **Unit Tests** - Vitest with coverage reporting
+     - **Unit Tests** - Vitest running all 59 tests
      - **Build** - Production build and artifact upload
      - **Lighthouse** - Performance audit on PRs
 
