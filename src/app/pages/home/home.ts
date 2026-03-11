@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import confetti from 'canvas-confetti';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit {
   featuredWorks = [
     {
       title: 'Vessel Series I',
@@ -28,4 +29,25 @@ export class HomeComponent {
       gradient: 'linear-gradient(135deg, #C00010 0%, #615D6C 100%)',
     },
   ];
+
+  ngAfterViewInit() {
+    // Trigger confetti with artist's color palette
+    setTimeout(() => {
+      confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#C00010', '#615D6C', '#D2ED96', '#C9D9FC'],
+      });
+    }, 300);
+  }
+
+  triggerConfetti() {
+    confetti({
+      particleCount: 100,
+      spread: 60,
+      origin: { y: 0.7 },
+      colors: ['#C00010', '#615D6C', '#D2ED96', '#C9D9FC'],
+    });
+  }
 }
