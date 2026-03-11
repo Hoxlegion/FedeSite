@@ -1,4 +1,2 @@
-.main-content {
-  padding-top: var(--navbar-height);
-  min-height: calc(100vh - var(--navbar-height));
-}
+/* App styles moved to Tailwind classes in template */
+

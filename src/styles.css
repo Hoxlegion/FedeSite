@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --coral: #C00010;
   --purple: #615D6C;
@@ -30,101 +34,55 @@ html {
 }
 
 body {
-  font-family: var(--font-body);
-  background-color: var(--cream);
-  color: var(--charcoal);
-  overflow-x: hidden;
-  line-height: 1.6;
+  @apply font-body bg-cream text-charcoal overflow-x-hidden leading-relaxed;
 }
 
 a {
-  text-decoration: none;
+  @apply no-underline;
   color: inherit;
 }
 
 img {
-  max-width: 100%;
-  display: block;
+  @apply max-w-full block;
 }
 
 ul {
   list-style: none;
 }
 
-/* Shared button styles */
-.btn {
-  display: inline-block;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.875rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.875rem 2rem;
-  border-radius: 2px;
-  transition: all 0.2s ease;
-  cursor: pointer;
-  border: 2px solid transparent;
-}
+@layer components {
+  /* Shared button styles */
+  .btn {
+    @apply inline-block font-display font-bold text-sm tracking-wider uppercase py-3.5 px-8 rounded-sm transition-all duration-200 cursor-pointer border-2 border-transparent;
+  }
 
-.btn-primary {
-  background: var(--coral);
-  color: var(--white);
-  border-color: var(--coral);
-}
+  .btn-primary {
+    @apply bg-coral text-white border-coral hover:bg-purple hover:border-purple;
+  }
 
-.btn-primary:hover {
-  background: var(--purple);
-  border-color: var(--purple);
-}
+  .btn-outline {
+    @apply bg-transparent border-cream text-cream hover:bg-cream hover:text-charcoal;
+  }
 
-.btn-outline {
-  background: transparent;
-  border-color: var(--cream);
-  color: var(--cream);
-}
+  .btn-outline-dark {
+    @apply bg-transparent border-charcoal text-charcoal hover:bg-charcoal hover:text-cream;
+  }
 
-.btn-outline:hover {
-  background: var(--cream);
-  color: var(--charcoal);
-}
+  /* Section labels */
+  .section-label {
+    @apply font-display text-xs tracking-[0.2em] uppercase text-coral block mb-3;
+  }
 
-.btn-outline-dark {
-  background: transparent;
-  border-color: var(--charcoal);
-  color: var(--charcoal);
-}
+  .section-label.light {
+    @apply text-lime;
+  }
 
-.btn-outline-dark:hover {
-  background: var(--charcoal);
-  color: var(--cream);
-}
+  .section-heading {
+    @apply font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] leading-tight tracking-tight mb-6 mt-1;
+  }
 
-/* Section labels */
-.section-label {
-  font-family: var(--font-display);
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--coral);
-  display: block;
-  margin-bottom: 0.75rem;
-}
-
-.section-label.light {
-  color: var(--lime);
-}
-
-.section-heading {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  margin-bottom: 1.5rem;
-  margin-top: 0.25rem;
-}
-
-.section-heading.light {
-  color: var(--cream);
+  .section-heading.light {
+    @apply text-cream;
+  }
 }
 
