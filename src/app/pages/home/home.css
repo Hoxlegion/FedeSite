@@ -1,42 +1,13 @@
 /* ---- HERO ---- */
 .hero {
-  position: relative;
   height: 100vh;
   min-height: 600px;
   display: flex;
   align-items: center;
-  overflow: hidden;
   padding: 0 var(--side-pad);
 }
 
-.hero-blob {
-  position: absolute;
-  border-radius: 50%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.hero-blob-1 {
-  width: 580px;
-  height: 580px;
-  background: var(--lime);
-  top: -120px;
-  right: -100px;
-  opacity: 0.55;
-}
-
-.hero-blob-2 {
-  width: 340px;
-  height: 340px;
-  background: var(--coral);
-  bottom: 40px;
-  left: -80px;
-  opacity: 0.35;
-}
-
 .hero-content {
-  position: relative;
-  z-index: 1;
   max-width: var(--max-width);
   width: 100%;
   margin: 0 auto;

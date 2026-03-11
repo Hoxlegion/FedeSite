@@ -37,17 +37,6 @@
   font-weight: 600;
 }
 
-.contact-header-deco {
-  position: absolute;
-  bottom: -60px;
-  right: -60px;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: rgba(255, 248, 239, 0.08);
-  pointer-events: none;
-}
-
 /* --- BODY --- */
 .contact-body {
   padding: 6rem var(--side-pad) 8rem;
