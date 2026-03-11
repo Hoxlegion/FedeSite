@@ -1,26 +1,27 @@
-<nav class="navbar" [class.scrolled]="isScrolled()">
-  <a routerLink="/" class="logo" (click)="closeMenu()">Federica Moro</a>
+<nav class="fixed top-0 left-0 right-0 z-[200] flex items-center justify-between px-[clamp(1.5rem,5vw,4rem)] h-[72px] bg-cream border-b-2 border-charcoal transition-shadow duration-300" [class.shadow-[0_4px_24px_rgba(28,28,30,0.1)]]=" isScrolled()">
+  <a routerLink="/" class="font-display font-extrabold text-[1.15rem] tracking-tight text-purple transition-colors duration-200 hover:text-coral" (click)="closeMenu()">Federica Moro</a>
 
   <button
-    class="menu-toggle"
+    class="hidden md:hidden flex-col justify-center gap-[5px] bg-transparent border-none cursor-pointer p-1 w-9 h-9"
+    [class.flex]="true"
     (click)="toggleMenu()"
     [attr.aria-expanded]="isMenuOpen()"
     aria-label="Toggle navigation"
   >
-    <span [class.open]="isMenuOpen()"></span>
-    <span [class.open]="isMenuOpen()"></span>
-    <span [class.open]="isMenuOpen()"></span>
+    <span class="block w-[26px] h-0.5 bg-charcoal transition-all duration-300 origin-center" [class.translate-y-[7px]]="isMenuOpen()" [class.rotate-45]="isMenuOpen()"></span>
+    <span class="block w-[26px] h-0.5 bg-charcoal transition-all duration-300 origin-center" [class.opacity-0]="isMenuOpen()"></span>
+    <span class="block w-[26px] h-0.5 bg-charcoal transition-all duration-300 origin-center" [class.-translate-y-[7px]]="isMenuOpen()" [class.-rotate-45]="isMenuOpen()"></span>
   </button>
 
-  <ul class="nav-links" [class.open]="isMenuOpen()">
-    <li>
-      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Home</a>
+  <ul class="flex items-center gap-10 md:absolute md:top-[72px] md:left-0 md:right-0 md:bg-cream md:border-b-2 md:border-charcoal md:flex-col md:gap-0 md:py-4 md:text-center" [class.hidden]="!isMenuOpen()" [class.flex]="isMenuOpen() || true">
+    <li class="md:w-full">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="font-display font-bold text-[0.82rem] tracking-[0.1em] uppercase text-charcoal relative pb-0.5 transition-colors duration-200 after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:right-0 after:h-0.5 after:bg-coral after:scale-x-0 after:origin-left after:transition-transform after:duration-200 hover:after:scale-x-100 [&.active]:text-coral [&.active]:after:scale-x-100 md:block md:py-3.5 md:px-[clamp(1.5rem,5vw,4rem)] md:after:hidden" (click)="closeMenu()">Home</a>
     </li>
-    <li>
-      <a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">Projects</a>
+    <li class="md:w-full">
+      <a routerLink="/projects" routerLinkActive="active" class="font-display font-bold text-[0.82rem] tracking-[0.1em] uppercase text-charcoal relative pb-0.5 transition-colors duration-200 after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:right-0 after:h-0.5 after:bg-coral after:scale-x-0 after:origin-left after:transition-transform after:duration-200 hover:after:scale-x-100 [&.active]:text-coral [&.active]:after:scale-x-100 md:block md:py-3.5 md:px-[clamp(1.5rem,5vw,4rem)] md:after:hidden" (click)="closeMenu()">Projects</a>
     </li>
-    <li>
-      <a routerLink="/contact" routerLinkActive="active" class="nav-cta" (click)="closeMenu()">Contact</a>
+    <li class="md:w-full">
+      <a routerLink="/contact" routerLinkActive="active" class="font-display font-bold text-[0.82rem] tracking-[0.1em] uppercase !bg-charcoal !text-cream !py-2 !px-5 rounded-sm transition-all duration-200 hover:!bg-coral md:mx-[clamp(1.5rem,5vw,4rem)] md:block [&.active]:!bg-coral" (click)="closeMenu()">Contact</a>
     </li>
   </ul>
 </nav>
