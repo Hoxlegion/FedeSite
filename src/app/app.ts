@@ -10,4 +10,3 @@ import { FooterComponent } from './footer/footer';
   styleUrl: './app.css',
 })
 export class App {}
-

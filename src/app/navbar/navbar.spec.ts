@@ -56,12 +56,12 @@ describe('NavbarComponent', () => {
 
   it('should update isScrolled on scroll', () => {
     expect(component.isScrolled()).toBe(false);
-    
+
     // Simulate scroll
     Object.defineProperty(window, 'scrollY', { value: 100, writable: true });
     component.onScroll();
     expect(component.isScrolled()).toBe(true);
-    
+
     // Reset
     Object.defineProperty(window, 'scrollY', { value: 0, writable: true });
     component.onScroll();

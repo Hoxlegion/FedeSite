@@ -1,23 +1,40 @@
 <!-- HERO -->
-<section class="relative h-screen min-h-[600px] flex items-center overflow-hidden px-[clamp(1.5rem,5vw,4rem)]">
+<section
+  class="relative h-screen min-h-[600px] flex items-center overflow-hidden px-[clamp(1.5rem,5vw,4rem)]"
+>
   <div class="relative z-10 w-full max-w-[1320px] mx-auto">
     <p class="font-serif italic text-[1.2rem] text-purple mb-1 tracking-wide">— visual artist —</p>
-    <h1 class="font-display font-extrabold text-[clamp(2.8rem,10vw,11rem)] leading-[0.88] tracking-tighter text-charcoal mb-6">Federica<br/>Moro</h1>
-    <p class="font-serif text-[clamp(1.1rem,2.5vw,1.6rem)] text-purple italic leading-relaxed mb-10 max-w-[440px]">Ceramics &amp; textiles.<br />Making as a way of thinking.</p>
+    <h1
+      class="font-display font-extrabold text-[clamp(2.8rem,10vw,11rem)] leading-[0.88] tracking-tighter text-charcoal mb-6"
+    >
+      Federica<br />Moro
+    </h1>
+    <p
+      class="font-serif text-[clamp(1.1rem,2.5vw,1.6rem)] text-purple italic leading-relaxed mb-10 max-w-[440px]"
+    >
+      Ceramics &amp; textiles.<br />Making as a way of thinking.
+    </p>
     <div class="flex gap-4 flex-wrap">
       <a routerLink="/projects" class="btn btn-primary">View Projects</a>
       <a routerLink="/contact" class="btn btn-outline">Get in Touch</a>
     </div>
   </div>
-  <div class="absolute bottom-10 right-[clamp(1.5rem,5vw,4rem)] flex flex-col items-center gap-2 z-10">
-    <span class="font-display text-[0.6rem] tracking-[0.25em] uppercase text-charcoal opacity-50 [writing-mode:vertical-lr]">Scroll</span>
+  <div
+    class="absolute bottom-10 right-[clamp(1.5rem,5vw,4rem)] flex flex-col items-center gap-2 z-10"
+  >
+    <span
+      class="font-display text-[0.6rem] tracking-[0.25em] uppercase text-charcoal opacity-50 [writing-mode:vertical-lr]"
+      >Scroll</span
+    >
     <div class="w-px h-14 bg-gradient-to-b from-charcoal to-transparent"></div>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section class="py-32 px-[clamp(1.5rem,5vw,4rem)] bg-white">
-  <div class="max-w-[1320px] mx-auto grid grid-cols-1 gap-12 md:grid-cols-[1fr_1.3fr] md:gap-24 items-center">
+  <div
+    class="max-w-[1320px] mx-auto grid grid-cols-1 gap-12 md:grid-cols-[1fr_1.3fr] md:gap-24 items-center"
+  >
     <div class="relative">
       <div class="w-full aspect-[4/5] bg-purple flex items-center justify-center relative">
         <div class="text-[5rem] text-lime select-none">✦</div>
@@ -27,9 +44,18 @@
     <div>
       <span class="section-label">About Me</span>
       <h2 class="section-heading">Where material<br />meets meaning</h2>
-      <p class="font-serif text-[1.25rem] italic leading-relaxed text-purple mb-4">I'm Federica Moro — an artist working with clay and fiber to explore structure, softness, and the poetry of everyday forms.</p>
-      <p class="text-base leading-[1.8] text-charcoal/70 mb-4">My ceramics are hand-built and thrown on the wheel, often textured and glazed to reflect organic surfaces — soil, weathered walls, skin. My textile work weaves together natural fibers, color, and pattern as a way of mapping memory and place.</p>
-      <p class="text-base leading-[1.8] text-charcoal/70 mb-4">Based in Italy, open to collaborations, commissions, and collectors worldwide.</p>
+      <p class="font-serif text-[1.25rem] italic leading-relaxed text-purple mb-4">
+        I'm Federica Moro — an artist working with clay and fiber to explore structure, softness,
+        and the poetry of everyday forms.
+      </p>
+      <p class="text-base leading-[1.8] text-charcoal/70 mb-4">
+        My ceramics are hand-built and thrown on the wheel, often textured and glazed to reflect
+        organic surfaces — soil, weathered walls, skin. My textile work weaves together natural
+        fibers, color, and pattern as a way of mapping memory and place.
+      </p>
+      <p class="text-base leading-[1.8] text-charcoal/70 mb-4">
+        Based in Italy, open to collaborations, commissions, and collectors worldwide.
+      </p>
       <a routerLink="/projects" class="btn btn-primary mt-6 inline-block">Explore My Work</a>
     </div>
   </div>
@@ -46,8 +72,14 @@
       @for (work of featuredWorks; track work.title) {
         <article class="cursor-pointer group">
           <div class="aspect-[3/4] relative overflow-hidden" [style.background]="work.gradient">
-            <div class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/30 flex items-end p-6 transition-colors duration-300">
-              <p class="font-display text-[0.7rem] tracking-[0.2em] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">{{ work.year }}</p>
+            <div
+              class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/30 flex items-end p-6 transition-colors duration-300"
+            >
+              <p
+                class="font-display text-[0.7rem] tracking-[0.2em] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                {{ work.year }}
+              </p>
             </div>
           </div>
           <div class="py-3.5">
@@ -71,20 +103,37 @@
       <h2 class="section-heading light">What moves me</h2>
     </div>
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
-      <div class="border border-[rgba(255,248,239,0.15)] p-10 transition-all duration-300 hover:border-lime hover:-translate-y-1.5">
+      <div
+        class="border border-[rgba(255,248,239,0.15)] p-10 transition-all duration-300 hover:border-lime hover:-translate-y-1.5"
+      >
         <div class="text-[2rem] text-lime mb-5 block">◈</div>
         <h3 class="font-display font-bold text-[1.1rem] text-cream mb-3">Nature &amp; Materials</h3>
-        <p class="text-[0.95rem] text-[rgba(255,248,239,0.6)] leading-[1.75]">Clay, linen, wool, stone — the textures of the natural world translated into form through hands and time.</p>
+        <p class="text-[0.95rem] text-[rgba(255,248,239,0.6)] leading-[1.75]">
+          Clay, linen, wool, stone — the textures of the natural world translated into form through
+          hands and time.
+        </p>
       </div>
-      <div class="border border-[rgba(255,248,239,0.15)] p-10 transition-all duration-300 hover:border-lime hover:-translate-y-1.5">
+      <div
+        class="border border-[rgba(255,248,239,0.15)] p-10 transition-all duration-300 hover:border-lime hover:-translate-y-1.5"
+      >
         <div class="text-[2rem] text-lime mb-5 block">◎</div>
         <h3 class="font-display font-bold text-[1.1rem] text-cream mb-3">Memory &amp; Place</h3>
-        <p class="text-[0.95rem] text-[rgba(255,248,239,0.6)] leading-[1.75]">The textures of childhood landscapes, Italian light, and the quiet persistence of handmade things passed down through generations.</p>
+        <p class="text-[0.95rem] text-[rgba(255,248,239,0.6)] leading-[1.75]">
+          The textures of childhood landscapes, Italian light, and the quiet persistence of handmade
+          things passed down through generations.
+        </p>
       </div>
-      <div class="border border-[rgba(255,248,239,0.15)] p-10 transition-all duration-300 hover:border-lime hover:-translate-y-1.5">
+      <div
+        class="border border-[rgba(255,248,239,0.15)] p-10 transition-all duration-300 hover:border-lime hover:-translate-y-1.5"
+      >
         <div class="text-[2rem] text-lime mb-5 block">◆</div>
-        <h3 class="font-display font-bold text-[1.1rem] text-cream mb-3">The Tactile &amp; the Slow</h3>
-        <p class="text-[0.95rem] text-[rgba(255,248,239,0.6)] leading-[1.75]">Resisting speed. Making by hand as a practice of attention — where the time spent in making becomes part of the work itself.</p>
+        <h3 class="font-display font-bold text-[1.1rem] text-cream mb-3">
+          The Tactile &amp; the Slow
+        </h3>
+        <p class="text-[0.95rem] text-[rgba(255,248,239,0.6)] leading-[1.75]">
+          Resisting speed. Making by hand as a practice of attention — where the time spent in
+          making becomes part of the work itself.
+        </p>
       </div>
     </div>
   </div>
@@ -93,8 +142,14 @@
 <!-- COLLABORATE CTA -->
 <section class="py-32 px-[clamp(1.5rem,5vw,4rem)] bg-sand">
   <div class="max-w-[700px] mx-auto text-center">
-    <h2 class="font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] tracking-tight leading-tight mb-5">Let's make something <em class="font-serif italic text-coral">together</em></h2>
-    <p class="text-[1.1rem] text-charcoal/60 mb-10 leading-[1.7]">Open for commissions, collaborations, and conversations about your next piece.</p>
+    <h2
+      class="font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] tracking-tight leading-tight mb-5"
+    >
+      Let's make something <em class="font-serif italic text-coral">together</em>
+    </h2>
+    <p class="text-[1.1rem] text-charcoal/60 mb-10 leading-[1.7]">
+      Open for commissions, collaborations, and conversations about your next piece.
+    </p>
     <a routerLink="/contact" class="btn btn-primary">Start a Conversation</a>
   </div>
 </section>

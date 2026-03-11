@@ -1,6 +1,5 @@
 /* Footer styles moved to Tailwind classes in template */
 
-
 .footer-logo {
   font-family: var(--font-display);
   font-weight: 800;
@@ -76,7 +75,9 @@
   background: var(--lime);
   padding: 0.4rem 0.8rem;
   border-radius: 2px;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 
 .social-links a:hover {

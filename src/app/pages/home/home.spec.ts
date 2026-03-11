@@ -63,7 +63,7 @@ describe('HomeComponent', () => {
 
   it('should display collaborate section', () => {
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.textContent).toContain('Let\'s make something together');
+    expect(compiled.textContent).toContain("Let's make something together");
   });
 
   it('should render correct number of featured works', () => {

@@ -47,7 +47,9 @@ describe('FooterComponent', () => {
 
   it('should have social media links', () => {
     const compiled = fixture.nativeElement as HTMLElement;
-    const socialLinks = compiled.querySelectorAll('a[aria-label*="Instagram"], a[aria-label*="Behance"], a[aria-label*="Pinterest"]');
+    const socialLinks = compiled.querySelectorAll(
+      'a[aria-label*="Instagram"], a[aria-label*="Behance"], a[aria-label*="Pinterest"]',
+    );
     expect(socialLinks.length).toBeGreaterThan(0);
   });
 });

@@ -2,16 +2,28 @@
   <header class="py-24 pb-20 px-[clamp(1.5rem,5vw,4rem)] bg-coral relative overflow-hidden">
     <div class="max-w-[1320px] mx-auto relative z-10">
       <span class="section-label !text-[rgba(255,248,239,0.75)]">Say Hello</span>
-      <h1 class="font-display font-extrabold text-[clamp(3rem,9vw,8rem)] tracking-tighter leading-[0.95] text-white">Let's create<br /><em class="font-serif italic font-semibold">together</em></h1>
+      <h1
+        class="font-display font-extrabold text-[clamp(3rem,9vw,8rem)] tracking-tighter leading-[0.95] text-white"
+      >
+        Let's create<br /><em class="font-serif italic font-semibold">together</em>
+      </h1>
     </div>
-    <div class="absolute bottom-[-60px] right-[-60px] w-[300px] h-[300px] rounded-full bg-[rgba(255,248,239,0.08)] pointer-events-none"></div>
+    <div
+      class="absolute bottom-[-60px] right-[-60px] w-[300px] h-[300px] rounded-full bg-[rgba(255,248,239,0.08)] pointer-events-none"
+    ></div>
   </header>
 
   <section class="py-24 pb-32 px-[clamp(1.5rem,5vw,4rem)]">
-    <div class="max-w-[1320px] mx-auto grid grid-cols-1 gap-12 md:grid-cols-[1fr_1.8fr] md:gap-24 items-start">
+    <div
+      class="max-w-[1320px] mx-auto grid grid-cols-1 gap-12 md:grid-cols-[1fr_1.8fr] md:gap-24 items-start"
+    >
       <!-- LEFT: Info -->
       <aside>
-        <h2 class="font-display text-[0.72rem] font-bold tracking-[0.2em] uppercase text-coral mb-6">Open for</h2>
+        <h2
+          class="font-display text-[0.72rem] font-bold tracking-[0.2em] uppercase text-coral mb-6"
+        >
+          Open for
+        </h2>
         <ul class="flex flex-col gap-3 mb-10">
           <li class="font-display text-[1.05rem] text-charcoal">✦ Commissions</li>
           <li class="font-display text-[1.05rem] text-charcoal">✦ Collaborations</li>
@@ -21,16 +33,39 @@
 
         <div class="w-10 h-[3px] bg-lime my-10"></div>
 
-        <p class="text-[0.72rem] tracking-[0.18em] uppercase text-charcoal/45 mb-2">Reach out directly</p>
-        <a href="mailto:hello@fede.art" class="font-display font-bold text-base text-charcoal transition-colors duration-200 hover:text-coral block mb-8">hello&#64;fede.art</a>
+        <p class="text-[0.72rem] tracking-[0.18em] uppercase text-charcoal/45 mb-2">
+          Reach out directly
+        </p>
+        <a
+          href="mailto:hello@fede.art"
+          class="font-display font-bold text-base text-charcoal transition-colors duration-200 hover:text-coral block mb-8"
+          >hello&#64;fede.art</a
+        >
 
         <div class="flex gap-3 mb-12">
-          <a href="#" aria-label="Instagram" class="font-display font-bold text-[0.72rem] tracking-[0.1em] bg-charcoal text-cream py-2 px-4 rounded-sm transition-colors duration-200 hover:bg-coral">IG</a>
-          <a href="#" aria-label="Behance" class="font-display font-bold text-[0.72rem] tracking-[0.1em] bg-charcoal text-cream py-2 px-4 rounded-sm transition-colors duration-200 hover:bg-coral">BE</a>
-          <a href="#" aria-label="Pinterest" class="font-display font-bold text-[0.72rem] tracking-[0.1em] bg-charcoal text-cream py-2 px-4 rounded-sm transition-colors duration-200 hover:bg-coral">PT</a>
+          <a
+            href="#"
+            aria-label="Instagram"
+            class="font-display font-bold text-[0.72rem] tracking-[0.1em] bg-charcoal text-cream py-2 px-4 rounded-sm transition-colors duration-200 hover:bg-coral"
+            >IG</a
+          >
+          <a
+            href="#"
+            aria-label="Behance"
+            class="font-display font-bold text-[0.72rem] tracking-[0.1em] bg-charcoal text-cream py-2 px-4 rounded-sm transition-colors duration-200 hover:bg-coral"
+            >BE</a
+          >
+          <a
+            href="#"
+            aria-label="Pinterest"
+            class="font-display font-bold text-[0.72rem] tracking-[0.1em] bg-charcoal text-cream py-2 px-4 rounded-sm transition-colors duration-200 hover:bg-coral"
+            >PT</a
+          >
         </div>
 
-        <blockquote class="font-serif italic text-base text-charcoal/45 border-l-[3px] border-lime pl-4 leading-relaxed">
+        <blockquote
+          class="font-serif italic text-base text-charcoal/45 border-l-[3px] border-lime pl-4 leading-relaxed"
+        >
           "Every great piece starts with a conversation."
         </blockquote>
       </aside>
@@ -41,23 +76,45 @@
           <div class="text-center py-16 px-8">
             <div class="text-[3rem] text-lime mb-6 block">✦</div>
             <h3 class="font-display font-extrabold text-[2rem] mb-4">Message received!</h3>
-            <p class="text-charcoal/60 mb-8 leading-[1.7]">Thank you for reaching out. I'll get back to you within 2–3 days.</p>
+            <p class="text-charcoal/60 mb-8 leading-[1.7]">
+              Thank you for reaching out. I'll get back to you within 2–3 days.
+            </p>
             <button class="btn btn-primary" (click)="submitted.set(false)">Send Another</button>
           </div>
         } @else {
           <form class="flex flex-col gap-6" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
             <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
               <div class="flex flex-col gap-2" [class.error]="isInvalid('name')">
-                <label for="name" class="font-display text-[0.7rem] font-bold tracking-[0.12em] uppercase text-charcoal">Your Name *</label>
-                <input id="name" type="text" formControlName="name" placeholder="Federica Rossi" class="font-body text-base py-3.5 px-4 border-2 border-sand bg-cream text-charcoal outline-none transition-colors duration-200 rounded-none appearance-none focus:border-purple [&.error]:border-coral" />
+                <label
+                  for="name"
+                  class="font-display text-[0.7rem] font-bold tracking-[0.12em] uppercase text-charcoal"
+                  >Your Name *</label
+                >
+                <input
+                  id="name"
+                  type="text"
+                  formControlName="name"
+                  placeholder="Federica Rossi"
+                  class="font-body text-base py-3.5 px-4 border-2 border-sand bg-cream text-charcoal outline-none transition-colors duration-200 rounded-none appearance-none focus:border-purple [&.error]:border-coral"
+                />
                 @if (isInvalid('name')) {
                   <span class="text-[0.78rem] text-coral">Please enter your name</span>
                 }
               </div>
 
               <div class="flex flex-col gap-2" [class.error]="isInvalid('email')">
-                <label for="email" class="font-display text-[0.7rem] font-bold tracking-[0.12em] uppercase text-charcoal">Email *</label>
-                <input id="email" type="email" formControlName="email" placeholder="you@example.com" class="font-body text-base py-3.5 px-4 border-2 border-sand bg-cream text-charcoal outline-none transition-colors duration-200 rounded-none appearance-none focus:border-purple [&.error]:border-coral" />
+                <label
+                  for="email"
+                  class="font-display text-[0.7rem] font-bold tracking-[0.12em] uppercase text-charcoal"
+                  >Email *</label
+                >
+                <input
+                  id="email"
+                  type="email"
+                  formControlName="email"
+                  placeholder="you@example.com"
+                  class="font-body text-base py-3.5 px-4 border-2 border-sand bg-cream text-charcoal outline-none transition-colors duration-200 rounded-none appearance-none focus:border-purple [&.error]:border-coral"
+                />
                 @if (isInvalid('email')) {
                   <span class="text-[0.78rem] text-coral">Please enter a valid email</span>
                 }
@@ -65,8 +122,16 @@
             </div>
 
             <div class="flex flex-col gap-2" [class.error]="isInvalid('inquiry')">
-              <label for="inquiry" class="font-display text-[0.7rem] font-bold tracking-[0.12em] uppercase text-charcoal">Type of Inquiry *</label>
-              <select id="inquiry" formControlName="inquiry" class="font-body text-base py-3.5 px-4 border-2 border-sand bg-cream text-charcoal outline-none transition-colors duration-200 rounded-none appearance-none focus:border-purple [&.error]:border-coral">
+              <label
+                for="inquiry"
+                class="font-display text-[0.7rem] font-bold tracking-[0.12em] uppercase text-charcoal"
+                >Type of Inquiry *</label
+              >
+              <select
+                id="inquiry"
+                formControlName="inquiry"
+                class="font-body text-base py-3.5 px-4 border-2 border-sand bg-cream text-charcoal outline-none transition-colors duration-200 rounded-none appearance-none focus:border-purple [&.error]:border-coral"
+              >
                 <option value="">Select an option...</option>
                 @for (type of inquiryTypes; track type) {
                   <option [value]="type">{{ type }}</option>
@@ -78,7 +143,11 @@
             </div>
 
             <div class="flex flex-col gap-2" [class.error]="isInvalid('message')">
-              <label for="message" class="font-display text-[0.7rem] font-bold tracking-[0.12em] uppercase text-charcoal">Your Message *</label>
+              <label
+                for="message"
+                class="font-display text-[0.7rem] font-bold tracking-[0.12em] uppercase text-charcoal"
+                >Your Message *</label
+              >
               <textarea
                 id="message"
                 formControlName="message"
@@ -91,7 +160,9 @@
               }
             </div>
 
-            <button type="submit" class="btn btn-primary self-start text-[0.9rem] py-4 px-10">Send Message →</button>
+            <button type="submit" class="btn btn-primary self-start text-[0.9rem] py-4 px-10">
+              Send Message →
+            </button>
           </form>
         }
       </div>

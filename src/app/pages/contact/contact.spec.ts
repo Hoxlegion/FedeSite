@@ -60,7 +60,7 @@ describe('ContactComponent', () => {
     const emailControl = component.form.get('email');
     emailControl?.setValue('invalid-email');
     expect(emailControl?.hasError('email')).toBe(true);
-    
+
     emailControl?.setValue('valid@email.com');
     expect(emailControl?.hasError('email')).toBe(false);
   });
@@ -75,7 +75,7 @@ describe('ContactComponent', () => {
     const messageControl = component.form.get('message');
     messageControl?.setValue('Short');
     expect(messageControl?.hasError('minlength')).toBe(true);
-    
+
     messageControl?.setValue('This is a long enough message to pass validation');
     expect(messageControl?.hasError('minlength')).toBe(false);
   });
@@ -118,7 +118,7 @@ describe('ContactComponent', () => {
       message: 'This is a test message that is long enough to pass validation',
     });
     component.onSubmit();
-    
+
     // Form should be reset
     expect(component.form.get('name')?.value).toBe(null);
     expect(component.form.get('email')?.value).toBe(null);
@@ -144,9 +144,9 @@ describe('ContactComponent', () => {
     const nameControl = component.form.get('name');
     nameControl?.setValue('');
     nameControl?.markAsTouched();
-    
+
     expect(component.isInvalid('name')).toBe(true);
-    
+
     nameControl?.setValue('John Doe');
     expect(component.isInvalid('name')).toBe(false);
   });

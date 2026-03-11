@@ -56,7 +56,8 @@ describe('GalleryComponent', () => {
   it('should render ceramic pieces', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     const articles = compiled.querySelectorAll('article');
-    const totalPieces = component.ceramics.length + component.textiles.length + component.more.length;
+    const totalPieces =
+      component.ceramics.length + component.textiles.length + component.more.length;
     expect(articles.length).toBe(totalPieces);
   });
 
