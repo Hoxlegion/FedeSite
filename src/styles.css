@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --coral: #C00010;
-  --purple: #615D6C;
-  --lime: #D2ED96;
-  --cream: #C9D9FC;
-  --charcoal: #1C1C1E;
-  --blush: #D2ED96;
-  --golden: #C00010;
-  --sand: #EEF3FF;
-  --white: #FFFFFF;
+  --coral: #c00010;
+  --purple: #615d6c;
+  --lime: #d2ed96;
+  --cream: #c9d9fc;
+  --charcoal: #1c1c1e;
+  --blush: #d2ed96;
+  --golden: #c00010;
+  --sand: #eef3ff;
+  --white: #ffffff;
 
   --font-display: 'Syne', sans-serif;
   --font-serif: 'Cormorant Garamond', serif;
@@ -22,7 +22,9 @@
   --side-pad: clamp(1.5rem, 5vw, 4rem);
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -85,4 +87,3 @@ ul {
     @apply text-cream;
   }
 }
-

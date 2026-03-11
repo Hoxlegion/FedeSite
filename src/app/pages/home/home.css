@@ -272,7 +272,9 @@
 .insp-card {
   border: 1px solid rgba(255, 248, 239, 0.15);
   padding: 2.5rem;
-  transition: border-color 0.3s, transform 0.3s;
+  transition:
+    border-color 0.3s,
+    transform 0.3s;
 }
 
 .insp-card:hover {

@@ -10,7 +10,6 @@
 /node_modules
 npm-debug.log
 yarn-error.log
-package-lock.json
 
 # Angular cache
 /.angular/cache
@@ -37,6 +36,9 @@ package-lock.json
 /coverage
 testem.log
 __screenshots__/
+/test-results/
+/playwright-report/
+/playwright/.cache/
 
 # Miscellaneous
 .sass-cache/

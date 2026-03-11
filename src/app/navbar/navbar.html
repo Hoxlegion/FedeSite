@@ -1,5 +1,13 @@
-<nav class="fixed top-0 left-0 right-0 z-[200] flex items-center justify-between px-[clamp(1.5rem,5vw,4rem)] h-[72px] bg-cream border-b-2 border-charcoal transition-shadow duration-300" [class.shadow-[0_4px_24px_rgba(28,28,30,0.1)]]="isScrolled()">
-  <a routerLink="/" class="font-display font-extrabold text-[1.15rem] tracking-tight text-purple transition-colors duration-200 hover:text-coral" (click)="closeMenu()">Federica Moro</a>
+<nav
+  class="fixed top-0 left-0 right-0 z-[200] flex items-center justify-between px-[clamp(1.5rem,5vw,4rem)] h-[72px] bg-cream border-b-2 border-charcoal transition-shadow duration-300"
+  [class.shadow-[0_4px_24px_rgba(28,28,30,0.1)]]="isScrolled()"
+>
+  <a
+    routerLink="/"
+    class="font-display font-extrabold text-[1.15rem] tracking-tight text-purple transition-colors duration-200 hover:text-coral"
+    (click)="closeMenu()"
+    >Federica Moro</a
+  >
 
   <button
     class="flex flex-col justify-center gap-[5px] bg-transparent border-none cursor-pointer p-1 w-9 h-9 md:hidden"
@@ -7,20 +15,54 @@
     [attr.aria-expanded]="isMenuOpen()"
     aria-label="Toggle navigation"
   >
-    <span class="block w-[26px] h-0.5 bg-charcoal transition-all duration-300 origin-center" [class.translate-y-[7px]]="isMenuOpen()" [class.rotate-45]="isMenuOpen()"></span>
-    <span class="block w-[26px] h-0.5 bg-charcoal transition-all duration-300 origin-center" [class.opacity-0]="isMenuOpen()"></span>
-    <span class="block w-[26px] h-0.5 bg-charcoal transition-all duration-300 origin-center" [class.-translate-y-[7px]]="isMenuOpen()" [class.-rotate-45]="isMenuOpen()"></span>
+    <span
+      class="block w-[26px] h-0.5 bg-charcoal transition-all duration-300 origin-center"
+      [class.translate-y-[7px]]="isMenuOpen()"
+      [class.rotate-45]="isMenuOpen()"
+    ></span>
+    <span
+      class="block w-[26px] h-0.5 bg-charcoal transition-all duration-300 origin-center"
+      [class.opacity-0]="isMenuOpen()"
+    ></span>
+    <span
+      class="block w-[26px] h-0.5 bg-charcoal transition-all duration-300 origin-center"
+      [class.-translate-y-[7px]]="isMenuOpen()"
+      [class.-rotate-45]="isMenuOpen()"
+    ></span>
   </button>
 
-  <ul class="md:flex items-center gap-10 max-md:absolute max-md:top-[72px] max-md:left-0 max-md:right-0 max-md:bg-cream max-md:border-b-2 max-md:border-charcoal max-md:flex-col max-md:gap-0 max-md:py-4 max-md:text-center" [class.hidden]="!isMenuOpen()" [class.flex]="isMenuOpen()">
+  <ul
+    class="md:flex items-center gap-10 max-md:absolute max-md:top-[72px] max-md:left-0 max-md:right-0 max-md:bg-cream max-md:border-b-2 max-md:border-charcoal max-md:flex-col max-md:gap-0 max-md:py-4 max-md:text-center"
+    [class.hidden]="!isMenuOpen()"
+    [class.flex]="isMenuOpen()"
+  >
     <li class="max-md:w-full">
-      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="font-display font-bold text-[0.82rem] tracking-[0.1em] uppercase text-charcoal relative pb-0.5 transition-colors duration-200 after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:right-0 after:h-0.5 after:bg-coral after:scale-x-0 after:origin-left after:transition-transform after:duration-200 hover:after:scale-x-100 [&.active]:text-coral [&.active]:after:scale-x-100 max-md:block max-md:py-3.5 max-md:px-[clamp(1.5rem,5vw,4rem)] max-md:after:hidden" (click)="closeMenu()">Home</a>
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="font-display font-bold text-[0.82rem] tracking-[0.1em] uppercase text-charcoal relative pb-0.5 transition-colors duration-200 after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:right-0 after:h-0.5 after:bg-coral after:scale-x-0 after:origin-left after:transition-transform after:duration-200 hover:after:scale-x-100 [&.active]:text-coral [&.active]:after:scale-x-100 max-md:block max-md:py-3.5 max-md:px-[clamp(1.5rem,5vw,4rem)] max-md:after:hidden"
+        (click)="closeMenu()"
+        >Home</a
+      >
     </li>
     <li class="max-md:w-full">
-      <a routerLink="/projects" routerLinkActive="active" class="font-display font-bold text-[0.82rem] tracking-[0.1em] uppercase text-charcoal relative pb-0.5 transition-colors duration-200 after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:right-0 after:h-0.5 after:bg-coral after:scale-x-0 after:origin-left after:transition-transform after:duration-200 hover:after:scale-x-100 [&.active]:text-coral [&.active]:after:scale-x-100 max-md:block max-md:py-3.5 max-md:px-[clamp(1.5rem,5vw,4rem)] max-md:after:hidden" (click)="closeMenu()">Projects</a>
+      <a
+        routerLink="/projects"
+        routerLinkActive="active"
+        class="font-display font-bold text-[0.82rem] tracking-[0.1em] uppercase text-charcoal relative pb-0.5 transition-colors duration-200 after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:right-0 after:h-0.5 after:bg-coral after:scale-x-0 after:origin-left after:transition-transform after:duration-200 hover:after:scale-x-100 [&.active]:text-coral [&.active]:after:scale-x-100 max-md:block max-md:py-3.5 max-md:px-[clamp(1.5rem,5vw,4rem)] max-md:after:hidden"
+        (click)="closeMenu()"
+        >Projects</a
+      >
     </li>
     <li class="max-md:w-full max-md:mx-[clamp(1.5rem,5vw,4rem)] max-md:my-2">
-      <a routerLink="/contact" routerLinkActive="active" class="font-display font-bold text-[0.82rem] tracking-[0.1em] uppercase bg-charcoal text-cream py-2 px-5 rounded-sm transition-all duration-200 hover:bg-coral inline-block max-md:block" (click)="closeMenu()">Contact</a>
+      <a
+        routerLink="/contact"
+        routerLinkActive="active"
+        class="font-display font-bold text-[0.82rem] tracking-[0.1em] uppercase bg-charcoal text-cream py-2 px-5 rounded-sm transition-all duration-200 hover:bg-coral inline-block max-md:block"
+        (click)="closeMenu()"
+        >Contact</a
+      >
     </li>
   </ul>
 </nav>

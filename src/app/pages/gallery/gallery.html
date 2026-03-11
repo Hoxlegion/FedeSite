@@ -2,8 +2,14 @@
   <header class="py-24 pb-16 px-[clamp(1.5rem,5vw,4rem)] bg-charcoal border-b-4 border-coral">
     <div class="max-w-[1320px] mx-auto">
       <span class="section-label">Portfolio</span>
-      <h1 class="font-display font-extrabold text-[clamp(3.5rem,12vw,9rem)] tracking-tighter leading-[0.92] text-cream mb-6">Projects</h1>
-      <p class="font-serif italic text-[1.15rem] text-white/60 max-w-[480px] leading-relaxed">A selection of work in ceramics, textiles, and beyond.</p>
+      <h1
+        class="font-display font-extrabold text-[clamp(3.5rem,12vw,9rem)] tracking-tighter leading-[0.92] text-cream mb-6"
+      >
+        Projects
+      </h1>
+      <p class="font-serif italic text-[1.15rem] text-white/60 max-w-[480px] leading-relaxed">
+        A selection of work in ceramics, textiles, and beyond.
+      </p>
     </div>
   </header>
 
@@ -12,20 +18,41 @@
     <div class="max-w-[1320px] mx-auto">
       <div class="mb-12 max-w-[600px]">
         <span class="section-label">01</span>
-        <h2 class="font-display font-extrabold text-[clamp(2.5rem,6vw,5rem)] tracking-tight leading-none text-charcoal mt-1 mb-4">Ceramics</h2>
-        <p class="font-serif italic text-[1.05rem] text-charcoal/55 leading-relaxed max-w-[480px]">Hand-built and wheel-thrown forms exploring surface, texture, and the conversation between function and sculpture.</p>
+        <h2
+          class="font-display font-extrabold text-[clamp(2.5rem,6vw,5rem)] tracking-tight leading-none text-charcoal mt-1 mb-4"
+        >
+          Ceramics
+        </h2>
+        <p class="font-serif italic text-[1.05rem] text-charcoal/55 leading-relaxed max-w-[480px]">
+          Hand-built and wheel-thrown forms exploring surface, texture, and the conversation between
+          function and sculpture.
+        </p>
       </div>
-      <div class="grid grid-cols-2 auto-rows-[180px] gap-3 md:auto-rows-[220px] md:gap-4 lg:grid-cols-3 xl:grid-cols-4 xl:auto-rows-[280px]">
+      <div
+        class="grid grid-cols-2 auto-rows-[180px] gap-3 md:auto-rows-[220px] md:gap-4 lg:grid-cols-3 xl:grid-cols-4 xl:auto-rows-[280px]"
+      >
         @for (piece of ceramics; track piece.id) {
           <article
             class="overflow-hidden cursor-pointer group"
             [class.col-span-2]="piece.size === 'wide'"
             [class.row-span-2]="piece.size === 'tall'"
           >
-            <div class="w-full h-full relative overflow-hidden transition-transform duration-[450ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-105" [style.background]="piece.gradient">
-              <div class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/70 flex flex-col justify-end p-6 transition-colors duration-[350ms]">
-                <h3 class="font-display font-bold text-[1.05rem] text-white translate-y-2.5 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">{{ piece.title }}</h3>
-                <p class="text-[0.8rem] text-[rgba(255,248,239,0.7)] mt-1 translate-y-2.5 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-[60ms]" [innerHTML]="piece.medium + ' &middot; ' + piece.year"></p>
+            <div
+              class="w-full h-full relative overflow-hidden transition-transform duration-[450ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-105"
+              [style.background]="piece.gradient"
+            >
+              <div
+                class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/70 flex flex-col justify-end p-6 transition-colors duration-[350ms]"
+              >
+                <h3
+                  class="font-display font-bold text-[1.05rem] text-white translate-y-2.5 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+                >
+                  {{ piece.title }}
+                </h3>
+                <p
+                  class="text-[0.8rem] text-[rgba(255,248,239,0.7)] mt-1 translate-y-2.5 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-[60ms]"
+                  [innerHTML]="piece.medium + ' &middot; ' + piece.year"
+                ></p>
               </div>
             </div>
           </article>
@@ -39,20 +66,41 @@
     <div class="max-w-[1320px] mx-auto">
       <div class="mb-12 max-w-[600px]">
         <span class="section-label">02</span>
-        <h2 class="font-display font-extrabold text-[clamp(2.5rem,6vw,5rem)] tracking-tight leading-none text-charcoal mt-1 mb-4">Textiles</h2>
-        <p class="font-serif italic text-[1.05rem] text-charcoal/55 leading-relaxed max-w-[480px]">Woven and hand-dyed works using natural fibers — mapping color, memory, and pattern through cloth.</p>
+        <h2
+          class="font-display font-extrabold text-[clamp(2.5rem,6vw,5rem)] tracking-tight leading-none text-charcoal mt-1 mb-4"
+        >
+          Textiles
+        </h2>
+        <p class="font-serif italic text-[1.05rem] text-charcoal/55 leading-relaxed max-w-[480px]">
+          Woven and hand-dyed works using natural fibers — mapping color, memory, and pattern
+          through cloth.
+        </p>
       </div>
-      <div class="grid grid-cols-2 auto-rows-[180px] gap-3 md:auto-rows-[220px] md:gap-4 lg:grid-cols-3 xl:grid-cols-4 xl:auto-rows-[280px]">
+      <div
+        class="grid grid-cols-2 auto-rows-[180px] gap-3 md:auto-rows-[220px] md:gap-4 lg:grid-cols-3 xl:grid-cols-4 xl:auto-rows-[280px]"
+      >
         @for (piece of textiles; track piece.id) {
           <article
             class="overflow-hidden cursor-pointer group"
             [class.col-span-2]="piece.size === 'wide'"
             [class.row-span-2]="piece.size === 'tall'"
           >
-            <div class="w-full h-full relative overflow-hidden transition-transform duration-[450ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-105" [style.background]="piece.gradient">
-              <div class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/70 flex flex-col justify-end p-6 transition-colors duration-[350ms]">
-                <h3 class="font-display font-bold text-[1.05rem] text-white translate-y-2.5 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">{{ piece.title }}</h3>
-                <p class="text-[0.8rem] text-[rgba(255,248,239,0.7)] mt-1 translate-y-2.5 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-[60ms]" [innerHTML]="piece.medium + ' &middot; ' + piece.year"></p>
+            <div
+              class="w-full h-full relative overflow-hidden transition-transform duration-[450ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-105"
+              [style.background]="piece.gradient"
+            >
+              <div
+                class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/70 flex flex-col justify-end p-6 transition-colors duration-[350ms]"
+              >
+                <h3
+                  class="font-display font-bold text-[1.05rem] text-white translate-y-2.5 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+                >
+                  {{ piece.title }}
+                </h3>
+                <p
+                  class="text-[0.8rem] text-[rgba(255,248,239,0.7)] mt-1 translate-y-2.5 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-[60ms]"
+                  [innerHTML]="piece.medium + ' &middot; ' + piece.year"
+                ></p>
               </div>
             </div>
           </article>
@@ -66,20 +114,40 @@
     <div class="max-w-[1320px] mx-auto">
       <div class="mb-12 max-w-[600px]">
         <span class="section-label">03</span>
-        <h2 class="font-display font-extrabold text-[clamp(2.5rem,6vw,5rem)] tracking-tight leading-none text-charcoal mt-1 mb-4">More</h2>
-        <p class="font-serif italic text-[1.05rem] text-charcoal/55 leading-relaxed max-w-[480px]">Mixed media, sketchbook studies, and documentation from the studio process.</p>
+        <h2
+          class="font-display font-extrabold text-[clamp(2.5rem,6vw,5rem)] tracking-tight leading-none text-charcoal mt-1 mb-4"
+        >
+          More
+        </h2>
+        <p class="font-serif italic text-[1.05rem] text-charcoal/55 leading-relaxed max-w-[480px]">
+          Mixed media, sketchbook studies, and documentation from the studio process.
+        </p>
       </div>
-      <div class="grid grid-cols-2 auto-rows-[180px] gap-3 md:auto-rows-[220px] md:gap-4 lg:grid-cols-3 xl:grid-cols-4 xl:auto-rows-[280px]">
+      <div
+        class="grid grid-cols-2 auto-rows-[180px] gap-3 md:auto-rows-[220px] md:gap-4 lg:grid-cols-3 xl:grid-cols-4 xl:auto-rows-[280px]"
+      >
         @for (piece of more; track piece.id) {
           <article
             class="overflow-hidden cursor-pointer group"
             [class.col-span-2]="piece.size === 'wide'"
             [class.row-span-2]="piece.size === 'tall'"
           >
-            <div class="w-full h-full relative overflow-hidden transition-transform duration-[450ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-105" [style.background]="piece.gradient">
-              <div class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/70 flex flex-col justify-end p-6 transition-colors duration-[350ms]">
-                <h3 class="font-display font-bold text-[1.05rem] text-white translate-y-2.5 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">{{ piece.title }}</h3>
-                <p class="text-[0.8rem] text-[rgba(255,248,239,0.7)] mt-1 translate-y-2.5 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-[60ms]" [innerHTML]="piece.medium + ' &middot; ' + piece.year"></p>
+            <div
+              class="w-full h-full relative overflow-hidden transition-transform duration-[450ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-105"
+              [style.background]="piece.gradient"
+            >
+              <div
+                class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/70 flex flex-col justify-end p-6 transition-colors duration-[350ms]"
+              >
+                <h3
+                  class="font-display font-bold text-[1.05rem] text-white translate-y-2.5 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+                >
+                  {{ piece.title }}
+                </h3>
+                <p
+                  class="text-[0.8rem] text-[rgba(255,248,239,0.7)] mt-1 translate-y-2.5 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-[60ms]"
+                  [innerHTML]="piece.medium + ' &middot; ' + piece.year"
+                ></p>
               </div>
             </div>
           </article>
@@ -88,4 +156,3 @@
     </div>
   </section>
 </div>
-
