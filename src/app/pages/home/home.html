@@ -19,7 +19,7 @@
 
 <!-- ABOUT -->
 <section class="py-32 px-[clamp(1.5rem,5vw,4rem)] bg-white">
-  <div class="max-w-[1320px] mx-auto grid grid-cols-[1fr_1.3fr] gap-24 items-center lg:gap-12 md:grid-cols-1 md:gap-12">
+  <div class="max-w-[1320px] mx-auto grid grid-cols-1 gap-12 md:grid-cols-[1fr_1.3fr] md:gap-24 items-center">
     <div class="relative">
       <div class="w-full aspect-[4/5] bg-purple flex items-center justify-center relative">
         <div class="text-[5rem] text-lime select-none">✦</div>
@@ -44,7 +44,7 @@
       <span class="section-label">Selected Works</span>
       <h2 class="section-heading">Recent Pieces</h2>
     </div>
-    <div class="grid grid-cols-3 gap-6 md:grid-cols-2 sm:grid-cols-1">
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
       @for (work of featuredWorks; track work.title) {
         <article class="cursor-pointer group">
           <div class="aspect-[3/4] relative overflow-hidden" [style.background]="work.gradient">
@@ -72,7 +72,7 @@
       <span class="section-label light">Inspiration</span>
       <h2 class="section-heading light">What moves me</h2>
     </div>
-    <div class="grid grid-cols-3 gap-6 md:grid-cols-1 md:gap-4">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
       <div class="border border-[rgba(255,248,239,0.15)] p-10 transition-all duration-300 hover:border-lime hover:-translate-y-1.5">
         <div class="text-[2rem] text-lime mb-5 block">◈</div>
         <h3 class="font-display font-bold text-[1.1rem] text-cream mb-3">Nature &amp; Materials</h3>

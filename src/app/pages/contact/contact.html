@@ -8,7 +8,7 @@
   </header>
 
   <section class="py-24 pb-32 px-[clamp(1.5rem,5vw,4rem)]">
-    <div class="max-w-[1320px] mx-auto grid grid-cols-[1fr_1.8fr] gap-24 items-start lg:gap-12 md:grid-cols-1 md:gap-12">
+    <div class="max-w-[1320px] mx-auto grid grid-cols-1 gap-12 md:grid-cols-[1fr_1.8fr] md:gap-24 items-start">
       <!-- LEFT: Info -->
       <aside>
         <h2 class="font-display text-[0.72rem] font-bold tracking-[0.2em] uppercase text-coral mb-6">Open for</h2>
@@ -36,7 +36,7 @@
       </aside>
 
       <!-- RIGHT: Form -->
-      <div class="bg-white p-12 border-2 border-charcoal md:p-8">
+      <div class="bg-white p-8 md:p-12 border-2 border-charcoal">
         @if (submitted()) {
           <div class="text-center py-16 px-8">
             <div class="text-[3rem] text-lime mb-6 block">✦</div>
@@ -46,7 +46,7 @@
           </div>
         } @else {
           <form class="flex flex-col gap-6" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
-            <div class="grid grid-cols-2 gap-6 md:grid-cols-1">
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
               <div class="flex flex-col gap-2" [class.error]="isInvalid('name')">
                 <label for="name" class="font-display text-[0.7rem] font-bold tracking-[0.12em] uppercase text-charcoal">Your Name *</label>
                 <input id="name" type="text" formControlName="name" placeholder="Federica Rossi" class="font-body text-base py-3.5 px-4 border-2 border-sand bg-cream text-charcoal outline-none transition-colors duration-200 rounded-none appearance-none focus:border-purple [&.error]:border-coral" />
