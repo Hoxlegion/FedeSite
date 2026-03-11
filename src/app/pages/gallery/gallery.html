@@ -1,0 +1,91 @@
+<div class="gallery-page">
+  <header class="gallery-header">
+    <div class="gallery-header-inner">
+      <span class="section-label">Portfolio</span>
+      <h1 class="gallery-title">Projects</h1>
+      <p class="gallery-desc">A selection of work in ceramics, textiles, and beyond.</p>
+    </div>
+  </header>
+
+  <!-- CERAMICS -->
+  <section class="projects-section">
+    <div class="projects-section-inner">
+      <div class="projects-section-label">
+        <span class="section-label">01</span>
+        <h2 class="projects-section-title">Ceramics</h2>
+        <p class="projects-section-desc">Hand-built and wheel-thrown forms exploring surface, texture, and the conversation between function and sculpture.</p>
+      </div>
+      <div class="gallery-grid">
+        @for (piece of ceramics; track piece.id) {
+          <article
+            class="gallery-item"
+            [class.size-wide]="piece.size === 'wide'"
+            [class.size-tall]="piece.size === 'tall'"
+          >
+            <div class="gallery-item-image" [style.background]="piece.gradient">
+              <div class="gallery-item-overlay">
+                <h3 class="gallery-item-title">{{ piece.title }}</h3>
+                <p class="gallery-item-meta">{{ piece.medium }} &middot; {{ piece.year }}</p>
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- TEXTILES -->
+  <section class="projects-section projects-section--alt">
+    <div class="projects-section-inner">
+      <div class="projects-section-label">
+        <span class="section-label">02</span>
+        <h2 class="projects-section-title">Textiles</h2>
+        <p class="projects-section-desc">Woven and hand-dyed works using natural fibers — mapping color, memory, and pattern through cloth.</p>
+      </div>
+      <div class="gallery-grid">
+        @for (piece of textiles; track piece.id) {
+          <article
+            class="gallery-item"
+            [class.size-wide]="piece.size === 'wide'"
+            [class.size-tall]="piece.size === 'tall'"
+          >
+            <div class="gallery-item-image" [style.background]="piece.gradient">
+              <div class="gallery-item-overlay">
+                <h3 class="gallery-item-title">{{ piece.title }}</h3>
+                <p class="gallery-item-meta" [innerHTML]="piece.medium + ' &middot; ' + piece.year"></p>
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- MORE -->
+  <section class="projects-section">
+    <div class="projects-section-inner">
+      <div class="projects-section-label">
+        <span class="section-label">03</span>
+        <h2 class="projects-section-title">More</h2>
+        <p class="projects-section-desc">Mixed media, sketchbook studies, and documentation from the studio process.</p>
+      </div>
+      <div class="gallery-grid">
+        @for (piece of more; track piece.id) {
+          <article
+            class="gallery-item"
+            [class.size-wide]="piece.size === 'wide'"
+            [class.size-tall]="piece.size === 'tall'"
+          >
+            <div class="gallery-item-image" [style.background]="piece.gradient">
+              <div class="gallery-item-overlay">
+                <h3 class="gallery-item-title">{{ piece.title }}</h3>
+                <p class="gallery-item-meta" [innerHTML]="piece.medium + ' &middot; ' + piece.year"></p>
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+</div>
+

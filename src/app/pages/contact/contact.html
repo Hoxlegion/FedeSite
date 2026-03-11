@@ -1,0 +1,99 @@
+<div class="contact-page">
+  <header class="contact-header">
+    <div class="contact-header-inner">
+      <span class="section-label">Say Hello</span>
+      <h1 class="contact-title">Let's create<br /><em>together</em></h1>
+    </div>
+    <div class="contact-header-deco"></div>
+  </header>
+
+  <section class="contact-body">
+    <div class="contact-inner">
+      <!-- LEFT: Info -->
+      <aside class="contact-info">
+        <h2>Open for</h2>
+        <ul class="contact-open-for">
+          <li>✦ Commissions</li>
+          <li>✦ Collaborations</li>
+          <li>✦ Custom pieces</li>
+          <li>✦ Buying existing work</li>
+        </ul>
+
+        <div class="contact-divider"></div>
+
+        <p class="contact-reach-label">Reach out directly</p>
+        <a href="mailto:hello@fede.art" class="contact-email">hello&#64;fede.art</a>
+
+        <div class="contact-social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Behance">BE</a>
+          <a href="#" aria-label="Pinterest">PT</a>
+        </div>
+
+        <blockquote class="contact-quote">
+          "Every great piece starts with a conversation."
+        </blockquote>
+      </aside>
+
+      <!-- RIGHT: Form -->
+      <div class="contact-form-wrap">
+        @if (submitted()) {
+          <div class="contact-success">
+            <div class="success-icon">✦</div>
+            <h3>Message received!</h3>
+            <p>Thank you for reaching out. I'll get back to you within 2–3 days.</p>
+            <button class="btn btn-primary" (click)="submitted.set(false)">Send Another</button>
+          </div>
+        } @else {
+          <form class="contact-form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+            <div class="form-row">
+              <div class="form-group" [class.error]="isInvalid('name')">
+                <label for="name">Your Name *</label>
+                <input id="name" type="text" formControlName="name" placeholder="Federica Rossi" />
+                @if (isInvalid('name')) {
+                  <span class="error-msg">Please enter your name</span>
+                }
+              </div>
+
+              <div class="form-group" [class.error]="isInvalid('email')">
+                <label for="email">Email *</label>
+                <input id="email" type="email" formControlName="email" placeholder="you@example.com" />
+                @if (isInvalid('email')) {
+                  <span class="error-msg">Please enter a valid email</span>
+                }
+              </div>
+            </div>
+
+            <div class="form-group" [class.error]="isInvalid('inquiry')">
+              <label for="inquiry">Type of Inquiry *</label>
+              <select id="inquiry" formControlName="inquiry">
+                <option value="">Select an option...</option>
+                @for (type of inquiryTypes; track type) {
+                  <option [value]="type">{{ type }}</option>
+                }
+              </select>
+              @if (isInvalid('inquiry')) {
+                <span class="error-msg">Please select an inquiry type</span>
+              }
+            </div>
+
+            <div class="form-group" [class.error]="isInvalid('message')">
+              <label for="message">Your Message *</label>
+              <textarea
+                id="message"
+                formControlName="message"
+                rows="6"
+                placeholder="Tell me about your idea, what you're looking for, or just say hi..."
+              ></textarea>
+              @if (isInvalid('message')) {
+                <span class="error-msg">Please write at least 20 characters</span>
+              }
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit">Send Message →</button>
+          </form>
+        }
+      </div>
+    </div>
+  </section>
+</div>
