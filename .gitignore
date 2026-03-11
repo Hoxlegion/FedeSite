@@ -36,6 +36,9 @@ yarn-error.log
 /coverage
 testem.log
 __screenshots__/
+/test-results/
+/playwright-report/
+/playwright/.cache/
 
 # Miscellaneous
 .sass-cache/

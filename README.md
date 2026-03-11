@@ -43,9 +43,11 @@ Build artifacts will be stored in the `dist/` directory.
 
 ## 🧪 Testing
 
-This project uses **Vitest** for unit testing with comprehensive test coverage.
+This project uses **Vitest** for unit testing and **Playwright** for End-to-End testing, with comprehensive test coverage.
 
-### Run Tests
+### Unit Tests
+
+**59 unit tests** covering all components:
 
 ```bash
 # Run tests once
@@ -58,9 +60,29 @@ npm run test:watch
 npm run test:ci
 ```
 
+### End-to-End Tests
+
+**42 E2E tests** covering all user journeys with Playwright:
+
+```bash
+# Run E2E tests (headless)
+npm run e2e
+
+# Run E2E tests with UI (interactive mode)
+npm run e2e:ui
+
+# Run E2E tests with visible browser
+npm run e2e:headed
+
+# Debug E2E tests
+npm run e2e:debug
+```
+
+Playwright automatically starts the dev server on port 4200 before running tests.
+
 ### Test Coverage
 
-Test coverage reports can be generated locally by running tests. The project maintains high test coverage across all components:
+Test coverage is comprehensive across all components:
 
 - ✅ **App Component** - Root component with routing
 - ✅ **Navbar Component** - Navigation with mobile menu
@@ -68,6 +90,13 @@ Test coverage reports can be generated locally by running tests. The project mai
 - ✅ **Home Component** - Landing page with all sections
 - ✅ **Gallery Component** - Projects gallery (Ceramics, Textiles, More)
 - ✅ **Contact Component** - Contact form with validation
+
+**E2E Test Suites:**
+- ✅ **Home Page** (8 tests) - Hero, CTA buttons, sections, responsiveness
+- ✅ **Navigation** (8 tests) - Links, routing, mobile menu, scroll effects
+- ✅ **Gallery/Projects** (9 tests) - Gallery sections, items, hover effects, layouts
+- ✅ **Contact** (11 tests) - Form validation, submission, responsiveness
+- ✅ **Accessibility** (8 tests) - Page titles, alt text, keyboard nav, performance
 
 ## 🔍 Code Quality
 
@@ -130,6 +159,7 @@ The project uses **GitHub Actions** for continuous integration and deployment:
    - Jobs:
      - **Code Quality & Security** - ESLint, Prettier, npm audit
      - **Unit Tests** - Vitest running all 59 tests
+     - **E2E Tests** - Playwright running all 42 end-to-end tests
      - **Build** - Production build and artifact upload
      - **Lighthouse** - Performance audit on PRs
 
@@ -149,7 +179,64 @@ Add these to show build status (update with your repository URL):
 ![Security](https://github.com/yourusername/FedeSite/workflows/Security%20Checks/badge.svg)
 ```
 
-## 📁 Project Structure
+## �️ Branch Protection & Pre-commit Hooks
+
+### Pre-commit Hooks (Husky + lint-staged)
+
+This project uses **Husky** and **lint-staged** to automatically lint and format code before every commit.
+
+**What runs on commit:**
+- **TypeScript/HTML files** → ESLint auto-fix + Prettier format
+- **CSS/JSON files** → Prettier format
+
+The hooks are configured in `.husky/pre-commit` and `package.json` (lint-staged section).
+
+### Branch Protection Rules
+
+To protect the `main` branch and ensure code quality, configure branch protection rules on GitHub:
+
+1. Navigate to **Settings** → **Branches** → **Add rule**
+2. Branch name pattern: `main`
+3. **Enable the following protections:**
+
+#### Required Status Checks
+- ✅ **Require status checks to pass before merging**
+  - Required checks:
+    - `code-quality` (ESLint + Prettier + npm audit)
+    - `test` (59 unit tests)
+    - `e2e-tests` (42 E2E tests)
+    - `build` (production build)
+
+#### Pull Request Requirements
+- ✅ **Require a pull request before merging**
+  - Required approvals: 1+
+  - Dismiss stale PR approvals when new commits are pushed
+  - Require review from Code Owners
+- ✅ **Require conversation resolution before merging**
+
+#### Additional Protections
+- ✅ **Require linear history** (no merge commits)
+- ✅ **Do not allow bypassing the above settings**
+- ✅ **Restrict who can push to matching branches**
+  - Only maintainers and admins
+
+#### Recommended Additional Rules
+- ✅ **Require signed commits** (optional but recommended)
+- ✅ **Include administrators** (apply rules even to admins)
+
+### Workflow
+
+With branch protection enabled:
+1. Create feature branch: `git checkout -b feature/your-feature`
+2. Make changes and commit (pre-commit hook runs automatically)
+3. Push: `git push origin feature/your-feature`
+4. Open Pull Request on GitHub
+5. Wait for all CI checks to pass (quality, tests, build, E2E)
+6. Request review from team member
+7. Address review comments
+8. Merge when approved and all checks pass
+
+## �📁 Project Structure
 
 ```
 src/
@@ -188,12 +275,13 @@ All colors are defined as CSS variables in `src/styles.css`:
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Angular 21 (standalone components, signals)
-- **UI Library**: ng-zorro-antd
+- **Framework**: Angular 21 (standalone components, signals, zoneless)
+- **UI Library**: ng-zorro-antd 21
 - **Styling**: Tailwind CSS 3
-- **Testing**: Vitest + Angular Testing Library
+- **Testing**: Vitest (unit) + Playwright (E2E)
 - **Linting**: ESLint + TypeScript ESLint
 - **Formatting**: Prettier
+- **Git Hooks**: Husky + lint-staged
 - **CI/CD**: GitHub Actions
 - **Security**: npm audit + Dependabot
 
